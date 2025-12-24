@@ -6,7 +6,8 @@ services:
    - db
   networks:
    exan-network:
-    ipv4_address: 172.20.5.1
+    ipv4_address: 172.16.4.1
+
  web:
   image: nginx:alpine
   ports:
@@ -16,7 +17,8 @@ services:
    - nginx-html:/usr/share/nginx/html
   networks:
    exan-network:
-    ipv4_address: 172.20.5.2
+    ipv4_address: 172.16.4.2
+
  db:
   image: postgres:13-alpine
   volumes:
@@ -29,15 +31,16 @@ services:
    - "5432"
   networks:
    exan-network:
-    ipv4_address: 172.20.5.3
-volumes:
- nginx-config:
- nginx-html:
- postgres-data:
+    ipv4_address: 172.16.4.3
+
 networks:
  exan-network:
   driver: bridge
   ipam:
    config:
-    - subnet: 172.20.5.0/28
+    - subnet: 172.16.4.0/28
+volumes:
+ nginx-config:
+ nginx-html:
+ postgres-data:
 
