@@ -5,7 +5,7 @@ sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyring
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 
 sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
-после этой комманды появидся терминал со стрелочкой, в него пишем каждую строчку и после нее прокидываем энтор
+после этой комманды появидся терминал со стрелочкой, в него пишем каждую строчку отдельно и после нее прокидываем энтор
 
 Types: deb
 URIs: https://download.docker.com/linux/debian
