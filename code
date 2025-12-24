@@ -6,7 +6,7 @@ services:
    - db
   networks:
    exan-network:
-    - ipv4_address: 172.16.4.1
+    ipv4_address: 172.16.4.1
 
  web:
   image: nginx:alpine
@@ -17,7 +17,7 @@ services:
    - nginx-html:/var/www/html
   networks:
    exan-network:
-    - ipv4_address: 172.16.4.2
+    ipv4_address: 172.16.4.2
 
  db:
   image: postgres:13-alpine
@@ -31,7 +31,7 @@ services:
    - "5432"
   networks:
    exan-network:
-    - ipv4_address: 172.16.4.3
+    ipv4_address: 172.16.4.3
 
 networks:
  exan-network:
