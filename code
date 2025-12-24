@@ -1,7 +1,7 @@
 services:
  personal-info:
   image: alpine:latest
-  command: sh -c "echo Student ${fam} ${nam} ${otch}"
+  command: sh -c "echo Student ${fam} ${nam} ${otch}; exit 0"
   depends_on:
    - db
   networks:
