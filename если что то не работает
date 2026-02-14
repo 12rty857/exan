@@ -1,0 +1,24 @@
+APT
+если не работает apt и загрузка, проверяем на машине сурс лист и резолв
+  resolv.conf 
+    nameserver 1.1.1.1
+
+  sources.list
+    deb https://deb.debian.org/debian bookworm main non-free-firmware
+    deb-src https://deb.debian.org/debian bookworm main non-free-firmware
+    deb https://deb.debian.org/debian bookworm-updates main non-free-firmware
+    deb-src https://deb.debian.org/debian bookworm-updates main non-free-firmware
+
+IPTABLES
+если не работает iptables
+  проверяем в файле /etc/iptables/rule.v4
+  маски у айпи адресов должны быть правильные, POSTROUTING и MASQUERADE глазами проверяем на верность синтаксиса
+  если ничего не нашли глазами проверяем командой - 
+  ```bash
+  iptables-restore -t /etc/iptables/rule.v4
+  ```
+  так же на машине с iptables прописываем
+  ```bash
+  systemctl restart iptables
+  systemctl restart networking
+  ```
